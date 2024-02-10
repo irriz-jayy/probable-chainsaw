@@ -16,10 +16,10 @@ const Accordion = () => {
     // wrapper
     <div className="w-3/4 ">
       {/* accordion */}
-      <div className="border border-red-800">
+      <div className="">
         {data.map((dataItem) => (
           // item
-          <div className="border bg-amber-800 cursor-pointer gap-4">
+          <div className="border bg-blue-800 cursor-pointer">
             <div
               onClick={() => handleSingleSelection(dataItem.id)}
               className="h-20 flex justify-between items-center p-2 font-bold"
@@ -31,7 +31,7 @@ const Accordion = () => {
             {/* answer */}
             {selected === dataItem.id ? (
               // answer content
-              <div className="bg-yellow-500 h-24 flex items-center p-2">
+              <div className="bg-blue-500 h-24 flex items-center p-2">
                 <p>{dataItem.answer}</p>
               </div>
             ) : null}
