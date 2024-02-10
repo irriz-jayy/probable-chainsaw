@@ -4,7 +4,7 @@ import Accordion from "./components/accordion/Accordion";
 function App() {
   return (
     <>
-      <div>
+      <div className="flex justify-center items-center border h-[80vh]">
         {/* accordion component */}
         <Accordion />
       </div>

@@ -8,23 +8,30 @@ const Accordion = () => {
 
   function handleSingleSelection(getCurrentId) {
     console.log(getCurrentId);
-    setSelected(getCurrentId);
+    // added conditional rendering to allow it to show and hide if selected
+    setSelected(getCurrentId === selected ? null : getCurrentId);
   }
 
   return (
-    <div className="wrapper">
-      <div className="accordion">
+    // wrapper
+    <div className="w-3/4 ">
+      {/* accordion */}
+      <div className="border border-red-800">
         {data.map((dataItem) => (
-          <div className="item">
+          // item
+          <div className="border bg-amber-800 cursor-pointer gap-4">
             <div
               onClick={() => handleSingleSelection(dataItem.id)}
-              className="title"
+              className="h-20 flex justify-between items-center p-2 font-bold"
+              //   title
             >
               <h3>{dataItem.question}</h3>
               <span>+</span>
             </div>
+            {/* answer */}
             {selected === dataItem.id ? (
-              <div className="content">
+              // answer content
+              <div className="bg-yellow-500 h-24 flex items-center p-2">
                 <p>{dataItem.answer}</p>
               </div>
             ) : null}
