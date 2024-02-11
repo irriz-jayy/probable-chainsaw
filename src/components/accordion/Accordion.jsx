@@ -15,6 +15,7 @@ const Accordion = () => {
   return (
     // wrapper
     <div className="w-3/4 ">
+      <p className="text-xl text-center">FAQs</p>
       {/* accordion */}
       <div className="">
         {data.map((dataItem) => (
@@ -31,7 +32,7 @@ const Accordion = () => {
             {/* answer */}
             {selected === dataItem.id ? (
               // answer content
-              <div className="bg-blue-500 h-24 flex items-center p-2">
+              <div className="bg-blue-500 min-h-24 flex items-center p-2">
                 <p>{dataItem.answer}</p>
               </div>
             ) : null}
