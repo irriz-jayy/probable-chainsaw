@@ -39,7 +39,13 @@ const Slider = ({ url, limit }) => {
   console.log(images);
 
   if (loading) {
-    return <div>Loading data! Please wait</div>;
+    return (
+      <img
+        src="https://media1.giphy.com/media/uIJBFZoOaifHf52MER/200w.gif?cid=6c09b952tz043423gbqygsdtlqyttyod4gyzd3j6u1185sif&ep=v1_gifs_search&rid=200w.gif&ct=g"
+        alt="loading"
+        className="h-48 w-96"
+      />
+    );
   }
 
   if (errorMsg !== null) {
@@ -51,7 +57,7 @@ const Slider = ({ url, limit }) => {
       <div className="h-60 w-96 flex flex-row relative items-center justify-center">
         <BsArrowLeftCircleFill
           onClick={handlePrevious}
-          className="absolute w-8 h-8 text-white left-4"
+          className="absolute w-8 h-8 text-white left-4 cursor-pointer"
         />
         {images && images.length
           ? images.map((imageItem, index) => (
@@ -69,7 +75,7 @@ const Slider = ({ url, limit }) => {
           : null}
         <BsArrowRightCircleFill
           onClick={handleNext}
-          className="absolute w-8 h-8 text-white right-4"
+          className="absolute w-8 h-8 text-white right-4 cursor-pointer"
         />
       </div>
     </>
