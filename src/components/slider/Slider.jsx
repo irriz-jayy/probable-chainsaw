@@ -41,7 +41,7 @@ const Slider = ({ url, limit }) => {
   if (loading) {
     return (
       <img
-        src="https://media1.giphy.com/media/uIJBFZoOaifHf52MER/200w.gif?cid=6c09b952tz043423gbqygsdtlqyttyod4gyzd3j6u1185sif&ep=v1_gifs_search&rid=200w.gif&ct=g"
+        src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenJrYjBkemNyZzk4b2xkM3d1amgzcGM2bGQwcDN4cTRjeHYzZmU5NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VseXvvxwowwCc/giphy.gif"
         alt="loading"
         className="h-48 w-96"
       />
