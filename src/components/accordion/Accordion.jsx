@@ -20,7 +20,11 @@ const Accordion = () => {
       <div className="">
         {data.map((dataItem) => (
           // item
-          <div className="border bg-blue-800 cursor-pointer">
+          <div
+            key={dataItem.id}
+            className="border bg-blue-800 cursor-pointer transition-all duration-4000"
+          >
+            {" "}
             <div
               onClick={() => handleSingleSelection(dataItem.id)}
               className="h-20 flex justify-between items-center p-2 font-bold"
