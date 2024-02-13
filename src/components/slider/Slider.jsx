@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 const Slider = ({ url, limit }) => {
   const [images, setImages] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -25,6 +25,14 @@ const Slider = ({ url, limit }) => {
     }
   }
 
+  function handlePrevious() {
+    setCurrentSlide(currentSlide === 0 ? images.length - 1 : currentSlide - 1);
+  }
+
+  function handleNext() {
+    setCurrentSlide(currentSlide === images.length - 1 ? 0 : currentSlide + 1);
+  }
+
   useEffect(() => {
     if (url !== "") fetchImages(url);
   }, [url]);
@@ -40,7 +48,30 @@ const Slider = ({ url, limit }) => {
 
   return (
     <>
-      <div>slider</div>
+      <div className="h-60 w-96 flex flex-row relative items-center justify-center">
+        <BsArrowLeftCircleFill
+          onClick={handlePrevious}
+          className="absolute w-8 h-8 text-white left-4"
+        />
+        {images && images.length
+          ? images.map((imageItem, index) => (
+              <img
+                src={imageItem.download_url}
+                alt={imageItem.download_url}
+                className={
+                  currentSlide === index
+                    ? "rounded-md w-full h-full"
+                    : "rounded-md w-full h-full hidden"
+                }
+                key={imageItem.id}
+              />
+            ))
+          : null}
+        <BsArrowRightCircleFill
+          onClick={handleNext}
+          className="absolute w-8 h-8 text-white right-4"
+        />
+      </div>
     </>
   );
 };

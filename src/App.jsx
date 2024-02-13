@@ -9,7 +9,7 @@ function App() {
         {/* accordion component */}
         <Accordion />
       </div>
-      <div className="flex justify-center items-center border h-[80vh]">
+      <div className="flex  justify-center items-center border h-[80vh]">
         <Slider url={"https://picsum.photos/v2/list"} limit={"10"} />
       </div>
     </>
