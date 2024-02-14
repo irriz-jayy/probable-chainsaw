@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ClipLoader } from "react-spinners";
+import { HashLoader } from "react-spinners";
 
 const LoadingScreen = () => {
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,7 @@ const LoadingScreen = () => {
         placeholder="Color of the loader"
       />
 
-      <ClipLoader
+      <HashLoader
         color={color}
         loading={loading}
         size={150}

@@ -1,11 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import { HashLoader } from "react-spinners";
 const Slider = ({ url, limit }) => {
   const [images, setImages] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [errorMsg, setErrorMsg] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [color, setColor] = useState("#000000");
 
   async function fetchImages(getUrl) {
     try {
@@ -40,10 +42,12 @@ const Slider = ({ url, limit }) => {
 
   if (loading) {
     return (
-      <img
-        src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExenJrYjBkemNyZzk4b2xkM3d1amgzcGM2bGQwcDN4cTRjeHYzZmU5NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VseXvvxwowwCc/giphy.gif"
-        alt="loading"
-        className="h-48 w-96"
+      <HashLoader
+        color={color}
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
       />
     );
   }
