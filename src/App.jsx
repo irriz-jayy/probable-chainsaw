@@ -3,6 +3,7 @@ import Accordion from "./components/accordion/Accordion";
 import LoadingScreen from "./components/loading/LoadingScreen";
 import Codegen from "./components/qr-code-generator/Codegen";
 import Slider from "./components/slider/Slider";
+import Typewriter from "./components/typewriter/Typewriter";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
       </div>
       <div className="flex  justify-center items-center border h-[80vh]">
         <Codegen />
+      </div>
+      <div className="flex  justify-center items-center border h-[80vh]">
+        <Typewriter />
       </div>
     </>
   );
