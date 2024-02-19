@@ -30,7 +30,7 @@ function App() {
         <Darkmode />
       </div>
       <div className="flex  justify-center items-center border h-[80vh]">
-        <Scroller />
+        <Scroller url={"https://dummyjson.com/products?limit=100"} />
       </div>
     </>
   );
