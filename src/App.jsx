@@ -1,5 +1,6 @@
 import "./App.css";
 import Accordion from "./components/accordion/Accordion";
+import Darkmode from "./components/light-dark-mode/Darkmode";
 import LoadingScreen from "./components/loading/LoadingScreen";
 import Codegen from "./components/qr-code-generator/Codegen";
 import Slider from "./components/slider/Slider";
@@ -23,6 +24,9 @@ function App() {
       </div>
       <div className="flex  justify-center items-center border h-[80vh]">
         <Typewriter />
+      </div>
+      <div className="flex  justify-center items-center border h-[80vh]">
+        <Darkmode />
       </div>
     </>
   );

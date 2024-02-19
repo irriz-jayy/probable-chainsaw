@@ -3,18 +3,26 @@ import TypewriterComponent from "typewriter-effect";
 
 const Typewriter = () => {
   return (
-    <div>
-      <TypewriterComponent
-        options={{
-          strings: ["Hey im Jay your favorite cousin"], // Your text here
-          autoStart: true, // Start typing automatically
-          loop: true, // Repeat the typing animation
-          cursor: "", // Hide the cursor
-          typeSpeed: 70, // Typing speed in milliseconds
-          delay: 70, // Delay between each character in milliseconds
-        }}
-      />
-    </div>
+    <>
+      <div>
+        <TypewriterComponent
+          onInit={(typewriter) => {
+            typewriter
+              .typeString("Hi im Jay!")
+              .callFunction(() => {
+                console.log("String typed out!");
+              })
+              .pauseFor(2500)
+              .deleteChars(4)
+              .typeString("Your favourite uncle")
+              .callFunction(() => {
+                console.log("All strings were deleted");
+              })
+              .start();
+          }}
+        />
+      </div>
+    </>
   );
 };
 
